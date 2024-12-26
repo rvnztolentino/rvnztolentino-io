@@ -27,7 +27,7 @@ const Navbar = () => {
             <button className="text-left lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">2025</button>
           </Link>
           <Link href="/about">
-            <button className="text-left lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">about</button>
+            <button onClick={toggleMenu} className="text-left lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">about</button>
           </Link>
           <Link href="/blog">
             <button className="text-left lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">blog</button>
