@@ -21,16 +21,16 @@ const Navbar = () => {
           <Image src="/hamburger-menu.svg" width={30} height={30} alt="gif" />
         </button>
       </div>
-      <div className={`lg:flex lg:flex-col lg:items-end lg:space-y-4 xs:space-x-4 xs:justify-between xs:mx-[20px] lg:mx-[-140px] 2xl:mx-[-280px] xs:mt-4 lg:mt-[-180px] ${isOpen ? 'block' : 'hidden'} lg:block`}>
+      <div className={`fade-in-1 lg:flex lg:flex-col lg:items-end lg:space-y-4 xs:space-x-4 xs:justify-between xs:mx-[20px] lg:mx-[-140px] 2xl:mx-[-280px] xs:mt-4 lg:mt-[-180px] ${isOpen ? 'block' : 'hidden'} lg:block`}>
         <ul className="flex flex-col lg:flex lg:flex-col lg:items-end xs:space-x-4 xs:space-y-4 xs:justify-between mb-4 text-right">
-          <Link href="/2025">
-            <button className="text-left lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">2025</button>
-          </Link>
           <Link href="/about">
             <button onClick={toggleMenu} className="text-left lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">about</button>
           </Link>
           <Link href="/blog">
-            <button className="text-left lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">blog</button>
+            <button onClick={toggleMenu} className="text-left lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">blog</button>
+          </Link>
+          <Link href="/projects">
+            <button onClick={toggleMenu} className="text-left lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">projects</button>
           </Link>
           <Link href="https://linktr.ee/rvnztolentino">
             <button className="text-left lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">linktree</button>
@@ -41,14 +41,14 @@ const Navbar = () => {
             <Link href="/">
               <button className="font-playfair-display text-black text-left w-0 mb-4">renz</button>
             </Link>
-            <Link href="/2025">
-              <button className="text-left lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">2025</button>
-            </Link>
             <Link href="/about">
               <button className="text-left lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">about</button>
             </Link>
             <Link href="/blog">
               <button className="text-left lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">blog</button>
+            </Link>
+            <Link href="/projects">
+              <button className="text-left lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">projects</button>
             </Link>
             <Link href="https://linktr.ee/rvnztolentino">
               <button className="text-left lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">linktree</button>
