@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image"
 
 export default function Home() {
   return (
@@ -8,8 +8,8 @@ export default function Home() {
         <h1 className="text-4xl text-dark-gray mt-20">Renz Tolentino</h1>
         <p className="fade-in-2 text-md text-dark-gray mt-2">
         Hi there! Welcome to my website! 🎉
-        <br></br><br></br>I’m currently in the process of building and refining this space, deciding on the best content to showcase.
-        Updates are on the way, stay tuned – there's more to come soon!
+        <br></br><br></br>Im currently in the process of building and refining this space, deciding on the best content to showcase.
+        Updates are on the way, stay tuned – theres more to come soon!
         </p>
       </main>
     </>

@@ -1,11 +1,11 @@
-'use client'
+"use client"
 
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Button } from "@/components/ui/button"
-import { Menu } from 'lucide-react';
+import { Menu } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,8 +45,8 @@ const Navbar = () => {
           </Popover>
         </div>
       </div>
-      <div className={`fade-in-1 lg:flex lg:flex-col lg:items-end lg:space-y-4 xs:space-x-4 xs:justify-between xs:mx-[20px] lg:mx-[-140px] 2xl:mx-[-280px] xs:mt-4 lg:mt-[-50px] lg:block`}>
-        <nav className='hidden lg:block'>
+      <div className="fade-in-1 lg:flex lg:flex-col lg:items-end lg:space-y-4 xs:space-x-4 xs:justify-between xs:mx-[20px] lg:mx-[-140px] 2xl:mx-[-280px] xs:mt-4 lg:mt-[-50px] lg:block">
+        <nav className="hidden lg:block">
           <ul className="flex lg:flex-col lg:items-end xs:space-x-4 lg:space-y-4 xs:justify-between xs:mx-[20px] lg:mx-[-350px] 2xl:mx-[-600px] xs:mt-4 lg:mt-[-140px] 2xl:mt-[-240px] text-right">
             <Link href="/">
               <p className="text-black mr-20 text-left w-0 mb-4">renz</p>
