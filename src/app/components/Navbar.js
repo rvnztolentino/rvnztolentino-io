@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed lg:flex items-center top-0 left-0 xs:right-0 xs:w-full lg:h-full lg:w-[300px] 2xl:w-[450px] xs:border-b lg:border-r border-slate-300 text-gray">
+    <nav className="fixed lg:flex items-center top-0 left-0 xs:right-0 xs:w-full lg:h-full lg:w-[400px] xs:border-b lg:border-r border-slate-300 text-gray">
       <div className="flex justify-between items-center w-full p-4 mb-[-14px] lg:hidden">
         <div className="text-dark-gray">
           <Link href="/"><p className="text-left w-0">renz</p></Link>
@@ -49,32 +49,31 @@ const Navbar = () => {
         <nav className="hidden lg:block">
           <ul className="flex lg:flex-col lg:items-end xs:space-x-4 lg:space-y-4 xs:justify-between xs:mx-[20px] lg:mx-[-350px] 2xl:mx-[-600px] xs:mt-4 lg:mt-[-140px] 2xl:mt-[-240px] text-right">
             <Link href="/">
-              <p className="text-black mr-20 text-left w-0 mb-4">renz</p>
+              <p className="text-black mr-14 text-left w-0 mb-4">renz</p>
             </Link>
             <Link href="/">
-              <p className="text-left mr-20 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">home</p>
+              <p className="text-left mr-14 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">home</p>
             </Link>
             <Link href="/about">
-              <p className="text-left mr-20 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">about</p>
+              <p className="text-left mr-14 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">about</p>
             </Link>
             <Link href="/blog">
-              <p className="text-left mr-20 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">blog</p>
+              <p className="text-left mr-14 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">blog</p>
             </Link>
             <Link href="/projects">
-              <p className="text-left mr-20 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">projects</p>
+              <p className="text-left mr-14 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">projects</p>
             </Link>
             <Link href="https://linktr.ee/rvnztolentino">
               <Button 
                 variant="outline" 
-                className="text-left mt-2 rounded-md bg-white hover:bg-black text-black hover:text-white transition-all duration-300 ease-in-out">
-                  linktree
-                </Button>
+                className="text-left mr-[-25px] mt-2 rounded-md bg-white hover:bg-black text-black hover:text-white transition-all duration-300 ease-in-out">
+                linktree
+              </Button>
             </Link>
           </ul>
         </nav>
       </div>
     </nav>
-
   );
 };
 
