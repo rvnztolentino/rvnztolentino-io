@@ -15,7 +15,7 @@ export default function Home() {
         <p className="border-b border-light-gray-2"></p>
         {/* Content */}
         <p className="fade-in-2 text-md text-dark-gray mt-2 pb-24">
-          i'm currently in the process of building and refining this space, deciding on the best content to showcase.
+          i&apos;m currently in the process of building and refining this space, deciding on the best content to showcase.
           updates are on the way, stay tuned! 🎉 
         </p>
       </main>
