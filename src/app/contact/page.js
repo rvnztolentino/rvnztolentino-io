@@ -1,10 +1,10 @@
 
-const About = () => {
+const Contact = () => {
     return (
     <>
         <main className="fade-in-1 flex flex-col justify-center min-h-screen space-y-4 xs:w-4/5 lg:w-2/5 mx-auto font-noto-sans text-left">
             {/* Title */}
-            <h1 className="text-4xl text-dark-gray mt-2">about</h1>
+            <h1 className="text-4xl text-dark-gray mt-2">contact</h1>
             {/* Description */}
             <p className="fade-in-2 text-md text-gray mt-2">
             ...
@@ -20,5 +20,5 @@ const About = () => {
     );
 }
 
-export default About;
+export default Contact;
   
