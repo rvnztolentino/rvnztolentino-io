@@ -8,7 +8,7 @@ import { Menu, MoveUpRight } from "lucide-react";
 const Navbar = () => {
 
   return (
-    <nav className="fixed lg:flex items-center top-0 left-0 xs:right-0 xs:w-full lg:h-full lg:w-[300px] 2xl:w-[400px] xs:border-b lg:border-r border-slate-300 bg-white font-noto-sans text-gray">
+    <nav className="fixed lg:flex items-center top-0 left-0 xs:right-0 xs:w-full lg:h-full lg:w-[300px] 2xl:w-[400px] 4xl:w-[900px] xs:border-b lg:border-r border-slate-300 bg-white font-noto-sans text-gray">
 
       {/* Mobile View */}
       <div className="flex justify-between items-center w-full p-4 mb-[-14px] lg:hidden">
@@ -23,7 +23,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop View */}
-      <div className="lg:flex lg:flex-col lg:items-end lg:space-y-4 xs:space-x-4 xs:justify-between xs:mx-[20px] lg:mx-[-140px] 2xl:mx-[-280px] xs:mt-4 lg:mt-[-50px] lg:block">
+      <div className="lg:flex lg:flex-col lg:items-end lg:space-y-4 xs:space-x-4 xs:justify-between xs:mx-[20px] lg:mx-[-140px] 2xl:mx-[-280px] 4xl:mx-[100px] xs:mt-4 lg:mt-[-50px] lg:block">
         <nav className="hidden lg:block">
           <ul className="flex lg:flex-col lg:items-end xs:space-x-4 lg:space-y-4 xs:justify-between xs:mx-[20px] lg:mx-[-350px] 2xl:mx-[-600px] xs:mt-4 lg:mt-[-140px] 2xl:mt-[-240px] text-right">
             <Link href="/">

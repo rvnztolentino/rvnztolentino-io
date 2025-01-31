@@ -1,4 +1,7 @@
 import Image from "next/image"
+import Link from "next/link";
+import { Button } from "@/components/ui/button"
+import TimeComponent from "./components/TimeComponent"
 
 export default function Home() {
   return (
@@ -18,6 +21,21 @@ export default function Home() {
           i&apos;m currently in the process of building and refining this space, deciding on the best content to showcase.
           updates are on the way, stay tuned! 🎉 
         </p>
+        {/*<p className="flex justify center fade-in-2 text-md text-violet italic mt-2 pb-24">
+          <Link href="https://24timezones.com/current_time/philippines_quezon_city_clock.php">
+          TIME IN QUEZON CITY, PHILIPPINES -
+          </Link>
+          <span style={{ marginLeft: "5px" }}></span> 
+          <TimeComponent /><span style={{ marginLeft: "5px" }}></span> 
+          <Link href="https://24timezones.com/time-zone/utc+8">
+            UTC +08:00
+          </Link>
+        </p>
+        <Button 
+          variant="outline" 
+          className="text-left text-md text-dark-gray mt-2 py-8 rounded-md bg-white hover:bg-light-gray-3 transition-all duration-300 ease-in-out">
+          Test 🎉
+        </Button>*/}
       </main>
     </>
   );

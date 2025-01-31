@@ -16,7 +16,7 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "Renz Tolentino",
-  description: "Renz' website",
+  description: "Renz' personal website",
 };
 
 export default function RootLayout({ children }) {
