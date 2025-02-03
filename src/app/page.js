@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <main className="fade-in-1 flex flex-col justify-center min-h-screen space-y-4 xs:w-4/5 lg:w-2/5 xs:mt-24 lg:mt-20 pb-24 mx-auto font-noto-sans text-left">
-        <Image src="/cube.svg" width={80} height={80} alt="svg" className="" />
+        <Image src="/cube.svg" width={70} height={70} alt="svg" className="" />
 
         {/* Title */}
         <h1 className="text-4xl text-dark-gray mt-20">Renz Tolentino</h1>
@@ -23,7 +23,7 @@ export default function Home() {
         {/* Content */}
         <p className="text-md text-dark-gray mt-2 pb-4">
           i&apos;m currently in the process of building and refining this space, deciding on the best content to showcase.
-          updates are on the way, stay tuned! 🎉 
+          updates are on the way, stay tuned! 🚀
         </p>
 
         <p className="text-lg text-dark-gray mt-2">Projects</p>
@@ -42,6 +42,7 @@ export default function Home() {
             </div>
           </Button>
         </Link>
+
         <Link href="https://github.com/rvnztolentino/NitroClicker">
           <Button 
             variant="outline" 

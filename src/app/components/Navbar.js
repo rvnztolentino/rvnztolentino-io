@@ -1,26 +1,30 @@
 "use client"
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import Selection from "./Selection";
 import { Button } from "@/components/ui/button"
-import { Menu, MoveUpRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  const [ XIcon, setXIcon ] = useState(false);
+  const handleClick = () => { 
+    setShowMenu(!showMenu); 
+    setXIcon(!XIcon);
+  };
 
   return (
-    <nav className="fixed lg:flex items-center top-0 left-0 xs:right-0 xs:w-full lg:h-full lg:w-[300px] 2xl:w-[400px] 4xl:w-[900px] xs:border-b lg:border-r border-slate-300 bg-white font-noto-sans text-gray">
+    <nav className="bg-white fixed lg:flex items-center top-0 left-0 xs:right-0 xs:w-full lg:h-full lg:w-[300px] 2xl:w-[400px] 4xl:w-[900px] xs:border-b lg:border-r border-slate-300 font-noto-sans text-gray">
 
       {/* Mobile View */}
       <div className="flex justify-between items-center w-full p-4 mb-[-14px] lg:hidden">
         <div className="text-dark-gray">
           <Link href="/"><p className="text-left w-0 font-medium">renz</p></Link>
         </div>
-        <div className="text-dark-gray">
-          <Link href="/menu">
-            <Menu className="mt-2 text-dark-gray"/> {/* Link to /menu */}
-          </Link>
-        </div>
+        {XIcon ? <X className="mt-2 text-dark-gray" onClick={handleClick}/> : <Menu className="mt-2 text-dark-gray" onClick={handleClick}/> }
       </div>
+      {showMenu ? <Selection handleClose={handleClick} /> : null}
 
       {/* Desktop View */}
       <div className="lg:flex lg:flex-col lg:items-end lg:space-y-4 xs:space-x-4 xs:justify-between xs:mx-[20px] lg:mx-[-140px] 2xl:mx-[-280px] 4xl:mx-[100px] xs:mt-4 lg:mt-[-50px] lg:block">
