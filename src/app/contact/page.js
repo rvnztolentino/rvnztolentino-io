@@ -24,7 +24,7 @@ const Contact = () => {
             </div>
             <div className="xs:block lg:hidden mt-2">
                 <p className="fade-in-2 text-md text-dark-gray">
-                    Have questions or feedback? Just reach out using the form below, and I'll get back to you soon.
+                    Have questions or feedback? Just reach out using the form below, and I&apos;ll get back to you soon.
                 </p>
             </div>
             <iframe src="https://tally.so/embed/mRbVWK?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="300" frameBorder="0"></iframe>
