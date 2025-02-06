@@ -13,21 +13,25 @@ const Navbar = () => {
     setShowMenu(!showMenu); 
     setXIcon(!XIcon);
   };
+  const refreshMenu = () => {
+    setShowMenu(false);
+    setXIcon(false);
+  };
 
   return (
-    <nav className="bg-white fixed lg:flex items-center top-0 left-0 xs:right-0 xs:w-full lg:h-full lg:w-[300px] 2xl:w-[400px] 4xl:w-[900px] xs:border-b lg:border-r border-slate-300 font-noto-sans text-gray">
+    <nav className="bg-white fixed lg:flex items-center top-0 left-0 xs:right-0 xs:w-full lg:h-full lg:w-[300px] xl:w-[400px] 2xl:w-[480px] 3xl:w-[590px] 4xl:w-[1050px] xs:border-b lg:border-r border-slate-300 font-noto-sans text-gray">
 
       {/* Mobile View */}
       <div className="flex justify-between items-center w-full p-4 mb-[-14px] lg:hidden">
         <div className="text-dark-gray">
-          <Link href="/"><p className="text-left w-0 font-medium">renz</p></Link>
+          <Link href="/" onClick={refreshMenu}><p className="text-left w-0 font-medium">renz</p></Link>
         </div>
         {XIcon ? <X className="mt-2 text-dark-gray" onClick={handleClick}/> : <Menu className="mt-2 text-dark-gray" onClick={handleClick}/> }
       </div>
-      {showMenu ? <Selection handleClose={handleClick} /> : null}
+      {showMenu ? <Selection handleClose={refreshMenu} /> : null}
 
       {/* Desktop View */}
-      <div className="lg:flex lg:flex-col lg:items-end lg:space-y-4 xs:space-x-4 xs:justify-between xs:mx-[20px] lg:mx-[-140px] 2xl:mx-[-280px] 4xl:mx-[100px] xs:mt-4 lg:mt-[-50px] lg:block">
+      <div className="lg:flex lg:flex-col lg:items-end lg:space-y-4 xs:space-x-4 xs:justify-between xs:mx-[20px] lg:mx-[-140px] xl:mx-[-40px] 2xl:mx-[-200px] 3xl:w-[100px] 4xl:mx-[250px] xs:mt-4 lg:mt-[-50px] lg:block">
         <nav className="hidden lg:block">
           <ul className="flex lg:flex-col lg:items-end xs:space-x-4 lg:space-y-4 xs:justify-between xs:mx-[20px] lg:mx-[-350px] 2xl:mx-[-600px] xs:mt-4 lg:mt-[-140px] 2xl:mt-[-240px] text-right">
             <Link href="/">

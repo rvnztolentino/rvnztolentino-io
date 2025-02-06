@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 const Selection = ({ handleClose }) => {
   return (
     <>
-      <main className="fade-in-1 flex flex-col justify-center min-h-screen space-y-4 xs:w-4/5 lg:w-2/5 mt-[-60px] mx-auto font-noto-sans text-center text-lg">
+      <main className="lg:hidden fade-in-1 flex flex-col justify-center min-h-screen space-y-4 xs:w-4/5 lg:w-2/5 mt-[-60px] mx-auto font-noto-sans text-center text-lg">
         <Link href="/" onClick={handleClose}>
             <p className="text-black mb-4 font-medium">renz</p>
         </Link>
@@ -23,11 +23,11 @@ const Selection = ({ handleClose }) => {
             <Link href="/projects" onClick={handleClose}>
                 <p className="hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">projects</p>
             </Link>
-            <Link href="/contact" onClick={handleClose}>
-                <p className="hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">contact</p>
-            </Link>
             <Link href="/resume" onClick={handleClose}>
                 <p className="hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">resume</p>
+            </Link>
+            <Link href="/contact" onClick={handleClose}>
+                <p className="hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">contact</p>
             </Link>
             <Link href="https://linktr.ee/rvnztolentino" onClick={handleClose}>
                 <Button 

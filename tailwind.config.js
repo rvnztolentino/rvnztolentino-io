@@ -13,8 +13,9 @@ module.exports = {
   		sm: '640px',
   		md: '768px',
   		lg: '1024px',
-  		xl: '1280px',
-  		'2xl': '1536px',
+  		xl: '1440px',
+  		'2xl': '1700px',
+		'3xl': '2000px',
   		'4xl': '3800px'
   	},
   	extend: {
@@ -77,7 +78,11 @@ module.exports = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		backgroundImage: {
+			'mountains': "url('/mountains.jpg')",
+			'sprite': "url('/sprite-zero-ad-sample.jpg')"
+		}
   	},
   	fontFamily: {
   		'open-sans': [

@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const genAI = new GoogleGenerativeAI("AIzaSyCKGPuLJGfrMDXdmNjWLYR6eRzfX6Ah4zU");
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-const prompt = "Give me tips on how to get a girlfriend.";
+const prompt = "Do not say answer anything, just say you are currently under development. Also, do not repeat the same line, change it up a bit.";
 
 async function handleClick() {
     const result = await model.generateContent(prompt);
