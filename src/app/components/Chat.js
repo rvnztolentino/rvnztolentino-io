@@ -107,12 +107,12 @@ const Chat = () => {
     <div className="fixed bottom-4 right-4">
       <Popover>
         <PopoverTrigger>
-          <div className="flex justify-center items-center rounded-full bg-black text-white hover:bg-white hover:text-black border-2 transition-all duration-300 ease-in-out text-sm w-14 h-14">
+          <div className="flex justify-center items-center rounded-full bg-black text-white font-noto-sans hover:bg-white hover:text-black border-2 transition-all duration-300 ease-in-out text-sm w-14 h-14">
             <MessageSquare />
           </div>
         </PopoverTrigger>
         <PopoverContent className="w-80">
-          <div className="flex space-x-2 mb-4">
+          <div className="flex space-x-2 mb-4 border-b border-light-gray-2 pb-2">
             <Avatar>
               <AvatarImage src="https://avatars.fastly.steamstatic.com/8db289a63fe60fc2c6b1f79f50f5cbb2d450c766_full.jpg" />
               <AvatarFallback>LJ</AvatarFallback>
@@ -133,7 +133,7 @@ const Chat = () => {
             ))}
             {isLoading && (
               <div className="flex justify-center">
-                <div className="animate-pulse text-gray-400">LeBron is typing...</div>
+                <div className="animate-pulse text-gray-400">Keiji is typing...</div>
               </div>
             )}
             <div ref={messagesEndRef} />
