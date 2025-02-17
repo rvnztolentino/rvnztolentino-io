@@ -2,6 +2,12 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
+import Chat from './components/Chat';
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { Input } from "@/components/ui/input"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { MessageSquare, Send } from 'lucide-react';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,7 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navbar /><Sidebar />
+        <Navbar /><Sidebar /><Chat />
         {children}
       </body>
     </html>

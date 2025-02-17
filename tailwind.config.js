@@ -30,6 +30,7 @@ module.exports = {
 			'light-gray-3': '#f3f4f6',
   			blue: '#2563eb',
 			violet: '#691770',
+			red: '#e11d48',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
@@ -80,9 +81,8 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
 		backgroundImage: {
-			'mountains': "url('/mountains.jpg')",
-			'sprite': "url('/sprite-zero-ad-sample.jpg')"
-		}
+			'jdm': "url('/jdm.jpg')"
+		},
   	},
   	fontFamily: {
   		'open-sans': [

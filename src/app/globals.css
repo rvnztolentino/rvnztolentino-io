@@ -36,6 +36,12 @@ body {
   animation: fadeIn 1.8s ease-in-out;
 }
 
+.fixed-popover {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

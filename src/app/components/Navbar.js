@@ -26,7 +26,7 @@ const Navbar = () => {
         <div className="text-dark-gray">
           <Link href="/" onClick={refreshMenu}><p className="text-left w-0 font-medium">renz</p></Link>
         </div>
-        {XIcon ? <X className="mt-2 text-dark-gray" onClick={handleClick}/> : <Menu className="mt-2 text-dark-gray" onClick={handleClick}/> }
+        {XIcon ? <X className="mt-2 text-dark-gray hover:bg-light-gray-2 transition-all duration-300 ease-in-out" onClick={handleClick}/> : <Menu className="mt-2 text-dark-gray hover:bg-light-gray-2 transition-all duration-300 ease-in-out" onClick={handleClick}/> }
       </div>
       {showMenu ? <Selection handleClose={refreshMenu} /> : null}
 
