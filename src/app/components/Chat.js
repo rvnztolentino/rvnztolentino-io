@@ -67,7 +67,29 @@ const Chat = () => {
   ]);
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [open, setOpen] = useState(false);
   const messagesEndRef = useRef(null);
+  const messageTimestamps = useRef([]);
+  const messageContainerRef = useRef(null);
+
+  // Check if device is mobile
+  const isMobile = () => {
+    if (typeof window === 'undefined') return false;
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+  };
+
+  // Auto-open popover after 3 seconds on desktop
+  useEffect(() => {
+    if (!isMobile()) {
+      const timer = setTimeout(() => {
+        setOpen(true);
+      }, 2000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -116,10 +138,10 @@ const Chat = () => {
   };
 
   return (
-    <div className="fixed bottom-4 right-4">
-      <Popover>
+    <div className="fixed bottom-4 right-4 font-noto-sans">
+      <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger>
-          <div className="flex justify-center items-center rounded-full bg-black text-white font-noto-sans hover:bg-white hover:text-black border-2 transition-all duration-300 ease-in-out text-sm w-14 h-14">
+          <div className="flex justify-center items-center rounded-full bg-black text-white hover:bg-white hover:text-black border-2 transition-all duration-300 ease-in-out text-sm w-14 h-14">
             <MessageSquare />
           </div>
         </PopoverTrigger>
@@ -135,7 +157,7 @@ const Chat = () => {
             </div>
           </div>
           
-          <div className="h-[340px] overflow-y-auto mb-4 space-y-4">
+          <div ref={messageContainerRef} className="h-[340px] overflow-y-auto mb-4 space-y-4 text-sm">
             {messages.map((message, index) => (
               <ChatMessage 
                 key={index}

@@ -12,7 +12,7 @@ export default function Home() {
         <p className="border-b border-light-gray-2"></p>
         <p className="text-md text-dark-gray mt-2">
           i&apos;m currently in the process of building and refining this space, deciding on the best content to showcase.
-          updates are on the way, stay tuned!
+          updates are on the way, stay tuned! 👋
         </p>
 
         {/* featured 
@@ -23,6 +23,7 @@ export default function Home() {
 
         <img src="jdm.jpg" alt="undermaintenance" className="rounded-xl"></img>
 
+        {/* 
         <p className="text-lg text-dark-gray mt-2">Projects</p>
         <Link href="https://github.com/ColasRab/Road-Defect-Indexing-System">
           <Button 
@@ -38,7 +39,7 @@ export default function Home() {
               </span>
             </div>
           </Button>
-        </Link>
+        </Link> 
 
         <Link href="https://github.com/rvnztolentino/kaku-app">
           <Button 
@@ -89,19 +90,51 @@ export default function Home() {
             </div>
           </Button>
         </Link>
+        */}
 
-        <p className="text-lg text-dark-gray mt-2">Blog posts</p>
-        <Link href="/blog">
+        <p className="text-lg text-dark-gray pt-4">Blog posts</p>
+        <Link href="/blog/7-ways-to-deploy-a-nodejs-app">
           <Button 
             variant="outline" 
             className="block w-full text-left text-sm text-dark-gray xs:pt-[12px] lg:pt-[20px] xs:pb-[50px] lg:pb-[40px] rounded-xl bg-white hover:bg-light-gray-3">
             <div className="lg:flex justify-between w-full items-center">
               <span className="flex items-center">
                 <FileText className="mr-2" />
-                7 Ways to Deploy a Node.js App
+                5 better ways to create a React app
               </span>
               <span className="text-light-gray">
-                Feb. 1, 2025
+                Feb. 16, 2025
+              </span>
+            </div>
+          </Button>
+        </Link>
+        <Link href="/blog/10-apps-websites-for-productivity-and-students">
+          <Button 
+            variant="outline" 
+            className="block w-full text-left text-sm text-dark-gray xs:pt-[12px] lg:pt-[20px] xs:pb-[50px] lg:pb-[40px] rounded-xl bg-white hover:bg-light-gray-3">
+            <div className="lg:flex justify-between w-full items-center">
+              <span className="flex items-center">
+                <FileText className="mr-2" />
+                <p className="xs:hidden lg:block">7 apps + websites for productivity and students 💻</p>
+                <p className="block lg:hidden">7 apps + websites for prod... 💻</p>
+              </span>
+              <span className="text-light-gray">
+                Feb. 10, 2025
+              </span>
+            </div>
+          </Button>
+        </Link>
+        <Link href="/blog/becoming-20-years-old">
+          <Button 
+            variant="outline" 
+            className="block w-full text-left text-sm text-dark-gray xs:pt-[12px] lg:pt-[20px] xs:pb-[50px] lg:pb-[40px] rounded-xl bg-white hover:bg-light-gray-3">
+            <div className="lg:flex justify-between w-full items-center">
+              <span className="flex items-center">
+                <FileText className="mr-2" />
+                becoming 20 years old.
+              </span>
+              <span className="text-light-gray">
+                Jan. 20, 2025
               </span>
             </div>
           </Button>
