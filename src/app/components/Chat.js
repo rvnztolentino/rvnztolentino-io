@@ -123,7 +123,7 @@ const Chat = () => {
             <MessageSquare />
           </div>
         </PopoverTrigger>
-        <PopoverContent className="w-80 h-[500px]">
+        <PopoverContent className="xs:w-80 lg:w-96 h-[500px]">
           <div className="flex space-x-2 mb-4 border-b border-light-gray-2 pb-2">
             <Avatar>
               <AvatarImage src="https://avatars.fastly.steamstatic.com/8db289a63fe60fc2c6b1f79f50f5cbb2d450c766_full.jpg" />
