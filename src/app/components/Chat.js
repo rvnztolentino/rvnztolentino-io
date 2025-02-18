@@ -12,13 +12,24 @@ import {
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const genAI = new GoogleGenerativeAI("AIzaSyCKGPuLJGfrMDXdmNjWLYR6eRzfX6Ah4zU");
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-const basePrompt = `
-        Instruction:
-        For now, reply that you are currently under construction. Do not repeat the same line, change it up a bit.
-        Apologize, also because Renz (the owner/creator of this site) haven't trained you yet.
-        Keep your message short and clear
-        `;
+const model = genAI.getGenerativeModel({
+  model: "gemini-1.5-flash",
+  systemInstruction: 
+      `Instruction:
+        You're name is Keiji and you are an AI Assistant for Renz's portfolio/personal site. You are designed to help or answer user's questions about the site.
+        You're answers should be limited to the site's content, the information i provide, and should not provide any personal information about Renz.
+        You can also provide some information about the site's content and features.
+        Note that every page is located at the Navigation bar.
+
+        Including the projects, blog posts, projects, about page, and other information which can be accessed on the
+        Navigation bar (On PC it's located at the left side of the site, on Mobile at top).
+        Renz's resume is currently not available for download on this site (I will update this soon).
+        To contact Renz, you can tell the user to send a message on the contact page which is on the Navigation bar as well.
+        Or they could contact me on rvnztolentino@outlook.com
+        To access Renz's social, you can tell the user to open the linktree link on the Navigation bar which is where Renz's socials are located.
+        Shorten your messages as well.
+      `,
+});
 
 const ChatMessage = ({ message, isUser }) => (
   <div className={`flex gap-2 mb-4 ${isUser ? 'flex-row-reverse' : ''}`}>
@@ -64,11 +75,11 @@ const Chat = () => {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages]); // Scroll whenever messages update
+  }, [messages]); // Scroll down automatically whenever messages update
 
-  const generateResponse = async () => {
+  const generateResponse = async (userMessage) => {
     try {
-      const result = await model.generateContent(basePrompt);
+      const result = await model.generateContent(userMessage);
       const response = await result.response;
       const text = response.text();
       return text;
@@ -82,11 +93,12 @@ const Chat = () => {
     if (inputText.trim()) {
       // Add user message
       setMessages(prev => [...prev, { text: inputText, isUser: true }]);
+      const userMessage = inputText;
       setInputText('');
       setIsLoading(true);
       
       // Get AI response
-      const response = await generateResponse();
+      const response = await generateResponse(userMessage);
       
       setMessages(prev => [...prev, {
         text: response,
@@ -111,11 +123,11 @@ const Chat = () => {
             <MessageSquare />
           </div>
         </PopoverTrigger>
-        <PopoverContent className="w-80">
+        <PopoverContent className="w-80 h-[500px]">
           <div className="flex space-x-2 mb-4 border-b border-light-gray-2 pb-2">
             <Avatar>
               <AvatarImage src="https://avatars.fastly.steamstatic.com/8db289a63fe60fc2c6b1f79f50f5cbb2d450c766_full.jpg" />
-              <AvatarFallback>LJ</AvatarFallback>
+              <AvatarFallback>KJ</AvatarFallback>
             </Avatar>
             <div className="flex flex-col">
               <p className="font-bold">Keiji</p>
@@ -123,7 +135,7 @@ const Chat = () => {
             </div>
           </div>
           
-          <div className="h-64 overflow-y-auto mb-4 space-y-4">
+          <div className="h-[340px] overflow-y-auto mb-4 space-y-4">
             {messages.map((message, index) => (
               <ChatMessage 
                 key={index}
