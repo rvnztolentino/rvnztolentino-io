@@ -86,7 +86,7 @@ const Chat = () => {
 
   useEffect(() => {
     scrollToBottom()
-  }, [])
+  }, [messages])
 
   const generateResponse = async (userMessage) => {
     try {
