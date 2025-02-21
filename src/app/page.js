@@ -16,7 +16,7 @@ export default function Home() {
             showcase. updates are on the way, stay tuned! 👋
           </p>
 
-          <img src="jdm.jpg" alt="undermaintenance" className="rounded-xl" />
+          <Image src="/jdm.jpg" width={750} height={250} alt="img" className="rounded-xl" />
 
           <p className="text-lg text-dark-gray pt-4">Blog posts</p>
           <Link href="/blog/5-better-ways-to-create-a-react-app">

@@ -24,7 +24,7 @@ const Contact = () => {
                 </div>
                 <div className="text-left">
                     <p className="text-md text-dark-gray">
-                        I'll only respond to those proposals that are a good match for my schedule and interests. thank you! 🙏
+                        I&apos;ll only respond to those proposals that are a good match for my schedule and interests. thank you! 🙏
                     </p>
                 </div>
                 <iframe src="https://tally.so/embed/mRbVWK?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="300" frameBorder="0"></iframe>
