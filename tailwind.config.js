@@ -85,19 +85,31 @@ module.exports = {
 		},
   	},
   	fontFamily: {
-  		'open-sans': [
-  			'Open Sans',
-  			'sans-serif'
-  		],
-  		'noto-sans': [
-  			'Noto Sans',
-  			'sans-serif'
-  		],
-  		'playfair-display': [
-  			'Playfair Display',
-  			'sans-serif'
-  		]
-  	}
+		'open-sans': [
+		  'Open Sans',
+		  'sans-serif',
+		  'Arial',
+		  'Helvetica'
+		],
+		'noto-sans': [
+		  'Noto Sans',
+		  'sans-serif',
+		  'Arial',
+		  'Helvetica'
+		],
+		'playfair-display': [
+		  'Playfair Display',
+		  'sans-serif',
+		  'Arial',
+		  'Helvetica'
+		],
+		'courier-prime': [
+		  'Courier Prime',
+		  'sans-serif',
+		  'Arial',
+		  'Helvetica'
+		]
+	  }	  
   },
   plugins: [require("tailwindcss-animate")],
 };

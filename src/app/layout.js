@@ -1,19 +1,14 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from './components/Navbar';
-import Sidebar from './components/Sidebar';
 import Chat from './components/Chat';
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { Input } from "@/components/ui/input"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { MessageSquare, Send } from 'lucide-react';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -29,8 +24,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navbar /><Sidebar /><Chat />
-        {children}
+        <div className="flex min-h-screen">
+          {/* Left Navigation */}
+          <Navbar />
+          {/* Left Nav Spacer */}
+          <div className="hidden lg:block w-64 flex-shrink-0" />
+          {/* Main Content */}
+          <main className="flex-1 max-w-[800px] w-full mx-auto px-4 pt-16 lg:border-l lg:border-r lg:border-light-gray-2">
+            {children}
+          </main>
+          {/* Right Sidebar Spacer */}
+          <div className="hidden lg:block w-80 flex-shrink-0" />
+          {/* Chat Component (usually fixed) */}
+          <Chat />
+        </div>
       </body>
     </html>
   );

@@ -1,21 +1,16 @@
-"use client";
+"use client"
 
-import React, { useState, useRef, useEffect } from 'react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Input } from '@/components/ui/input';
-import { Send, MessageSquare } from 'lucide-react';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
+import { useState, useRef, useEffect } from "react"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Input } from "@/components/ui/input"
+import { Send, MessageSquare, X } from "lucide-react" // Added X icon
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI("AIzaSyCKGPuLJGfrMDXdmNjWLYR6eRzfX6Ah4zU");
+const genAI = new GoogleGenerativeAI("AIzaSyCKGPuLJGfrMDXdmNjWLYR6eRzfX6Ah4zU")
 const model = genAI.getGenerativeModel({
   model: "gemini-1.5-flash",
-  systemInstruction: 
-      `Instruction:
+  systemInstruction: `Instruction:
         You're name is Keiji and you are an AI Assistant for Renz's portfolio/personal site. You are designed to help or answer user's questions about the site.
         You're answers should be limited to the site's content, the information i provide, and should not provide any personal information about Renz.
         You can also provide some information about the site's content and features.
@@ -29,10 +24,10 @@ const model = genAI.getGenerativeModel({
         To access Renz's social, you can tell the user to open the linktree link on the Navigation bar which is where Renz's socials are located.
         Shorten your messages as well.
       `,
-});
+})
 
 const ChatMessage = ({ message, isUser }) => (
-  <div className={`flex gap-2 mb-4 ${isUser ? 'flex-row-reverse' : ''}`}>
+  <div className={`flex gap-2 mb-4 ${isUser ? "flex-row-reverse" : ""}`}>
     <Avatar>
       {isUser ? (
         <>
@@ -42,100 +37,95 @@ const ChatMessage = ({ message, isUser }) => (
       ) : (
         <>
           <AvatarImage src="https://avatars.fastly.steamstatic.com/8db289a63fe60fc2c6b1f79f50f5cbb2d450c766_full.jpg" />
-          <AvatarFallback>KJ</AvatarFallback>
+          <AvatarFallback>K</AvatarFallback>
         </>
       )}
     </Avatar>
-    <div className={`max-w-[80%] ${isUser ? 'text-right' : ''}`}>
-      <div className="text-sm font-semibold mb-1">
-        {isUser ? 'You' : 'Keiji'}
-      </div>
-      <div className={`rounded-lg p-3 ${
-        isUser 
-          ? 'bg-black text-white' 
-          : 'bg-light-gray-2 text-black'
-      }`}>
-        {message}
-      </div>
+    <div className={`max-w-[80%] ${isUser ? "text-right" : ""}`}>
+      <div className="text-sm font-semibold mb-1">{isUser ? "You" : "Keiji"}</div>
+      <div className={`rounded-lg p-3 ${isUser ? "bg-black text-white" : "bg-light-gray-2 text-black"}`}>{message}</div>
     </div>
   </div>
-);
+)
 
 const Chat = () => {
   const [messages, setMessages] = useState([
     { text: "Hey! I'm Keiji, Renz's AI assistant. How can I help you today?", isUser: false },
-  ]);
-  const [inputText, setInputText] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [open, setOpen] = useState(false);
-  const messagesEndRef = useRef(null);
-  const messageTimestamps = useRef([]);
-  const messageContainerRef = useRef(null);
+  ])
+  const [inputText, setInputText] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
+  const [open, setOpen] = useState(false)
+  const messagesEndRef = useRef(null)
+  const messageTimestamps = useRef([])
+  const messageContainerRef = useRef(null)
 
   // Check if device is mobile
-  const isMobile = () => {
-    if (typeof window === 'undefined') return false;
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    );
-  };
+  const isMobile = useRef(false)
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      isMobile.current = false
+    } else {
+      isMobile.current = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    }
+  }, [])
 
   // Auto-open popover after 3 seconds on desktop
   useEffect(() => {
-    if (!isMobile()) {
+    if (!isMobile.current) {
       const timer = setTimeout(() => {
-        setOpen(true);
-      }, 2000);
-      
-      return () => clearTimeout(timer);
+        setOpen(true)
+      }, 2000)
+
+      return () => clearTimeout(timer)
     }
-  }, []);
+  }, [])
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
 
   useEffect(() => {
-    scrollToBottom();
-  }, [messages]); // Scroll down automatically whenever messages update
+    scrollToBottom()
+  }, [])
 
   const generateResponse = async (userMessage) => {
     try {
-      const result = await model.generateContent(userMessage);
-      const response = await result.response;
-      const text = response.text();
-      return text;
+      const result = await model.generateContent(userMessage)
+      const response = await result.response
+      const text = response.text()
+      return text
     } catch (error) {
-      console.error('Error generating response:', error);
-      return "I'm temporarily unavailable. Please try again later.";
+      console.error("Error generating response:", error)
+      return "I'm temporarily unavailable. Please try again later."
     }
-  };
+  }
 
   const handleSend = async () => {
     if (inputText.trim()) {
-      // Add user message
-      setMessages(prev => [...prev, { text: inputText, isUser: true }]);
-      const userMessage = inputText;
-      setInputText('');
-      setIsLoading(true);
-      
-      // Get AI response
-      const response = await generateResponse(userMessage);
-      
-      setMessages(prev => [...prev, {
-        text: response,
-        isUser: false
-      }]);
-      
-      setIsLoading(false);
+      setMessages((prev) => [...prev, { text: inputText, isUser: true }])
+      const userMessage = inputText
+      setInputText("")
+      setIsLoading(true)
+
+      const response = await generateResponse(userMessage)
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          text: response,
+          isUser: false,
+        },
+      ])
+
+      setIsLoading(false)
     }
-  };
+  }
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      handleSend();
+    if (e.key === "Enter") {
+      handleSend()
     }
-  };
+  }
 
   return (
     <div className="fixed bottom-4 right-4 font-noto-sans">
@@ -145,25 +135,29 @@ const Chat = () => {
             <MessageSquare />
           </div>
         </PopoverTrigger>
-        <PopoverContent className="xs:w-80 lg:w-96 h-[500px]">
+        <PopoverContent className="xs:w-80 lg:w-96 h-[500px] relative">
+          {" "}
+          {/* Added relative positioning */}
+          {/* Close button */}
+          <button
+            onClick={() => setOpen(false)}
+            className="absolute top-2 right-2 p-4 rounded-full hover:bg-gray-100 transition-colors"
+          >
+            <X className="" />
+          </button>
           <div className="flex space-x-2 mb-4 border-b border-light-gray-2 pb-2">
             <Avatar>
               <AvatarImage src="https://avatars.fastly.steamstatic.com/8db289a63fe60fc2c6b1f79f50f5cbb2d450c766_full.jpg" />
-              <AvatarFallback>KJ</AvatarFallback>
+              <AvatarFallback>K</AvatarFallback>
             </Avatar>
             <div className="flex flex-col">
               <p className="font-bold">Keiji</p>
               <p className="text-sm">AI Assistant</p>
             </div>
           </div>
-          
           <div ref={messageContainerRef} className="h-[340px] overflow-y-auto mb-4 space-y-4 text-sm">
             {messages.map((message, index) => (
-              <ChatMessage 
-                key={index}
-                message={message.text}
-                isUser={message.isUser}
-              />
+              <ChatMessage key={index} message={message.text} isUser={message.isUser} />
             ))}
             {isLoading && (
               <div className="flex justify-center">
@@ -172,7 +166,6 @@ const Chat = () => {
             )}
             <div ref={messagesEndRef} />
           </div>
-
           <div className="flex space-x-2">
             <Input
               value={inputText}
@@ -193,7 +186,8 @@ const Chat = () => {
         </PopoverContent>
       </Popover>
     </div>
-  );
-};
+  )
+}
 
-export default Chat;
+export default Chat
+

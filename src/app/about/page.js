@@ -3,17 +3,21 @@ import { User } from 'lucide-react'
 const About = () => {
     return (
     <>
-        <main className="flex flex-col justify-center min-h-screen space-y-4 xs:w-4/5 lg:w-2/5 mx-auto font-noto-sans text-left">
-            {/* Title */}
-            <User width={80} height={80} className="" />
-            <h1 className="text-4xl text-dark-gray mt-2">about</h1>
-            {/* Border */}
-            <p className="border-b border-light-gray-2"></p>
-            {/* Content */}
-            <p className="text-md text-dark-gray mt-2 pb-24">
-            Nothing yet! Check back later :)
-            </p>
-        </main>
+        <div className="min-h-screen flex justify-center"> 
+            <div className="w-full px-4 md:px-16">
+                <main className="flex flex-col space-y-5 py-8 font-noto-sans">
+                    {/* Title */}
+                    <User width={80} height={80} className="" />
+                    <h1 className="text-4xl text-dark-gray">about</h1>
+                    {/* Border */}
+                    <p className="border-b border-light-gray-2"></p>
+                    {/* Content */}
+                    <p className="text-md text-dark-gray">
+                    Nothing yet! Check back later :)
+                    </p>
+                </main>
+            </div>
+        </div>
     </>
     );
 }
