@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export default function BlogCard({ post }) {
+function BlogCard({ post }) {
   return (
     <Link href={post.href}>
       <div
