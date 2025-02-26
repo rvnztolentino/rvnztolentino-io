@@ -15,7 +15,7 @@
 } */
 
 body {
-  font-family: 'Open Sans', 'Noto Sans', 'Playfair Display', 'Courier Prime',Arial, Helvetica, sans-serif, monospace;
+  font-family: 'Open Sans', 'Noto Sans', 'Playfair Display', 'Courier Prime', Arial, Helvetica, sans-serif, monospace;
 }
 
 @keyframes fadeIn {
@@ -105,5 +105,16 @@ body {
   }
   body {
     @apply bg-white text-black;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

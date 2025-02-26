@@ -26,6 +26,9 @@ const Selection = ({ handleClose }) => {
             <Link href="/resume" onClick={handleClose}>
                 <p className="hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">resume</p>
             </Link>
+            <Link href="/store" onClick={handleClose}>
+            <p className="hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">store</p>
+            </Link>
             <Link href="/contact" onClick={handleClose}>
                 <p className="hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">contact</p>
             </Link>

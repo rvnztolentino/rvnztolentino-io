@@ -1,6 +1,17 @@
+'use client'
+
+import { useEffect } from 'react';
 import { User } from 'lucide-react'
 
 const About = () => {
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    useEffect(() => {
+        scrollToTop();
+    }, []);
+
     return (
     <>
         <div className="min-h-screen flex justify-center"> 

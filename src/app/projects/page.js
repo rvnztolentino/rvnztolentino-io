@@ -1,6 +1,18 @@
+'use client'
+
+import { useEffect } from 'react';
 import { CodeXml } from 'lucide-react'
   
 const Projects = () => {
+    // Auto-scroll to top once page is opened
+            const scrollToTop = () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+        
+            useEffect(() => {
+                scrollToTop();
+            }, []);
+
     return (
     <>
         <div className="min-h-screen flex justify-center"> 
@@ -12,7 +24,7 @@ const Projects = () => {
                     <p className="border-b border-light-gray-2"></p>
 
                     <div className="text-md text-dark-gray space-y-2">
-                        <p>Where I showcase my projects, ideas, and things I’ve built.<br></br></p>
+                        <p>A space where I present my projects, innovations, and creations.<br></br></p>
                         <p 
                             className="font-courier-prime text-sm text-red text-opacity-80 bg-light-gray-3 px-2" 
                             style={{ display: 'inline-block', padding: '2px 5px 0px 5px' }}

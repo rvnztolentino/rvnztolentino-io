@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white lg:bg-transparent fixed lg:flex items-center top-0 left-0 xs:right-0 xs:w-full lg:h-full lg:w-[300px] xl:w-[400px] 2xl:w-[480px] 3xl:w-[590px] 4xl:w-[1050px] xs:border-b border-slate-300 font-noto-sans text-gray">
+    <nav className="bg-white lg:bg-transparent fixed lg:flex items-center top-0 left-0 xs:w-full lg:h-full lg:w-[300px] xl:w-[400px] 2xl:w-[480px] 3xl:w-[590px] 4xl:w-[1050px] xs:border-b border-slate-300 font-noto-sans text-gray">
 
       {/* Mobile View */}
       <div className="flex justify-between items-center w-full p-4 mb-[-14px] lg:hidden">
@@ -51,6 +51,9 @@ const Navbar = () => {
             </Link>
             <Link href="/resume">
               <p className="text-left mr-14 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">resume</p>
+            </Link>
+            <Link href="/store">
+              <p className="text-left mr-14 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">store</p>
             </Link>
             <Link href="/contact">
               <p className="text-left mr-14 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">contact</p>
