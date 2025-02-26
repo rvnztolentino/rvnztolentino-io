@@ -20,7 +20,7 @@ const model = genAI.getGenerativeModel({
         Here are the site information:
         Including the projects, blog posts, projects, about page, store (digital products and things i sell), and other information which can be accessed on the
         Navigation bar (On Desktop it's located at the left side of the site. On Mobile view there's a hamburger menu at top that opens the navigation).
-        Renz's resume is currently not available for download on this site (I will update this soon).
+        Renz's resume is currently not available for download on this site, it will be available on the about page (I will update this soon).
         To contact Renz, you can tell the user to send a message on the contact page which is on the Navigation bar as well.
         Or they could contact me on rvnztolentino@outlook.com
         To access Renz's social, you can tell the user to open the linktree link on the Navigation bar which is where Renz's socials are located.

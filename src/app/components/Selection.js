@@ -17,17 +17,14 @@ const Selection = ({ handleClose }) => {
             <Link href="/about" onClick={handleClose}>
                 <p className="hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">about</p>
             </Link>
-            <Link href="/blog" onClick={handleClose}>
-                <p className="hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">blog</p>
+            <Link href="/store" onClick={handleClose}>
+                <p className="hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">store</p>
             </Link>
             <Link href="/projects" onClick={handleClose}>
                 <p className="hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">projects</p>
             </Link>
-            <Link href="/resume" onClick={handleClose}>
-                <p className="hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">resume</p>
-            </Link>
-            <Link href="/store" onClick={handleClose}>
-            <p className="hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">store</p>
+            <Link href="/blog" onClick={handleClose}>
+                <p className="hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">blog</p>
             </Link>
             <Link href="/contact" onClick={handleClose}>
                 <p className="hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">contact</p>

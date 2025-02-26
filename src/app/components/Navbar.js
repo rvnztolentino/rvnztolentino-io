@@ -43,17 +43,14 @@ const Navbar = () => {
             <Link href="/about">
               <p className="text-left mr-14 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">about</p>
             </Link>
-            <Link href="/blog">
-              <p className="text-left mr-14 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">blog</p>
+            <Link href="/store">
+              <p className="text-left mr-14 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">store</p>
             </Link>
             <Link href="/projects">
               <p className="text-left mr-14 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">projects</p>
             </Link>
-            <Link href="/resume">
-              <p className="text-left mr-14 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">resume</p>
-            </Link>
-            <Link href="/store">
-              <p className="text-left mr-14 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">store</p>
+            <Link href="/blog">
+              <p className="text-left mr-14 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">blog</p>
             </Link>
             <Link href="/contact">
               <p className="text-left mr-14 lg:w-0 hover:text-black hover:rounded-md transition-all duration-300 ease-in-out">contact</p>
